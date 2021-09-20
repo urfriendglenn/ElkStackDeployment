@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - docker
+
+- hosts: elk
+  become: true
+  roles:
+    - elk
+
+- hosts: webservers
+  become: true
+  roles:
+    - web
+    - filebeat
+    - metricbeat
