@@ -8,9 +8,10 @@
   become: true
   roles:
     - elk
-    
-- pause:
-  minutes: 2
+
+- name: Pause for two minutes for Elk Container to execute
+  pause:
+    minutes: 2
 
 - hosts: webservers
   become: true
