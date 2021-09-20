@@ -9,9 +9,12 @@
   roles:
     - elk
 
-- name: Pause for two minutes for Elk Container to execute
-  pause:
-    minutes: 2
+- name: Wait for Elk port 9200 to be open
+  wait_for:
+    host: 10.1.0.4
+    port: 9200
+    delay: 60
+    state: drained
 
 - hosts: webservers
   become: true
