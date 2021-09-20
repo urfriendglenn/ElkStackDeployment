@@ -14,6 +14,7 @@
     - 5601:5601
     - 9200:9200
     - 5044:5044
+    restart_policy: unless-stopped
 
 - name: Wait for Elk port 9200 to be open
   wait_for:

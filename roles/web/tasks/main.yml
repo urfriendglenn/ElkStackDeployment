@@ -10,3 +10,4 @@
     image: cyberxsecurity/dvwa
     state: started
     published_ports: 80:80
+    restart_policy: unless-stopped
