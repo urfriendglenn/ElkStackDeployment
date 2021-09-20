@@ -104,6 +104,21 @@ SSH into the control node and follow the steps below:
   ```
 
 - Update the `/etc/ansible/hosts` file to include the IP Addresses of the target Elk server and webservers.
+  - Example:
+  
+  ```bash
+  [webservers]
+
+  10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+  10.0.0.8 ansible_python_interpreter=/usr/bin/python3
+  10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+
+  [elk]
+  10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+  ```
+  
+  > **_NOTE:_** The `webservers` and `elk` host groups must exist for the playbook to function accordingly
+
 - Run the playbook, and navigate to `http://[elk_ip_addr]:5601/app/kibana` to check that the installation worked as expected:
   - Run:
   
