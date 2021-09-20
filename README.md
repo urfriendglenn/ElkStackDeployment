@@ -116,13 +116,14 @@ SSH into the control node and follow the steps below:
   [elk]
   10.1.0.4 ansible_python_interpreter=/usr/bin/python3
   ```
-  
+
   > **_NOTE:_** The `webservers` and `elk` host groups must exist for the playbook to function accordingly
 
-- Run the playbook, and navigate to `http://[elk_ip_addr]:5601/app/kibana` to check that the installation worked as expected:
-  - Run:
+- Run the playbook:
   
   ```bash
   cd /etc/ansible
   ansible-playbook playbook.yml
   ```
+
+- Navigate to `http://[elk_ip_addr]:5601/app/kibana` to check that the installation worked as expected
